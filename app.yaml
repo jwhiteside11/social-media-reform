@@ -1,0 +1,54 @@
+runtime: python39  # Specifies the Python runtime version
+
+handlers:
+- url: /
+  static_files: www/socialmedia.html
+  upload: www/socialmedia.html
+  secure: always
+
+- url: /addictive-algorithms
+  static_files: www/algorithms.html
+  upload: www/algorithms.html
+  secure: always
+
+- url: /data-privacy
+  static_files: www/data-privacy.html
+  upload: www/data-privacy.html
+  secure: always
+
+- url: /fraud
+  static_files: www/fraud.html
+  upload: www/fraud.html
+  secure: always
+
+- url: /hate
+  static_files: www/hate.html
+  upload: www/hate.html
+  secure: always
+
+- url: /misinformation
+  static_files: www/misinformation.html
+  upload: www/misinformation.html
+  secure: always
+
+- url: /youth-protection
+  static_files: www/youth-protection.html
+  upload: www/youth-protection.html
+  secure: always
+
+- url: /template
+  static_files: www/template.html
+  upload: www/template.html
+  secure: always
+
+- url: /(.*)
+  static_files: www/\1
+  upload: www/(.*)
+  secure: always
+
+automatic_scaling:
+  min_instances: 0  # Allow scaling down to zero instances when there's no traffic
+  max_instances: 1  # Limit to a maximum of 1 instance
+  target_cpu_utilization: 0.65  # Optional: Control the CPU utilization target for scaling
+
+instance_class: F1  # Optional: Use F1 instance (512MB memory)
