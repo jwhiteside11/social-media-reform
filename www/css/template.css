@@ -4,6 +4,7 @@ html {
 	--dark-gray-blue: #7C878E;
 	--med-gray-blue: #C8D1D7;
 	--light-gray-blue: #d4dbdf;
+	--hero-blue: #2D3851;
 	--link-color: #00588e;
 	font-family: 'Roboto', sans-serif;
 	background-color: var(--bkgd-color);
@@ -201,7 +202,7 @@ footer p {
 	background-color: var(--light-gray-blue);
 }
 
-.hero-contain > div:first-child {
+.hero-contain > div:first-child, .hero-main > div:first-child {
 	height: 84px;
 	width: 100%;
 	background-color: var(--bkgd-color);
@@ -217,6 +218,88 @@ footer p {
 
 
 
+.hero-main {
+	background-color: var(--hero-blue);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 32px;
+}
+
+.hero-main .h-content {
+	display: grid;
+	width: 900px;
+	height: 500px;
+	margin: 32px 0;
+	grid-template-columns: auto 392px;
+	grid-template-rows: auto 96px;
+}
+
+.hero-main .h-content > div {
+	background-color: var(--bkgd-color);
+	border-radius: 4px;
+	margin: 8px;
+	background-size: cover;
+	background-position: center;
+}
+
+.hero-main .subtext-wrap {
+	grid-column: 1 / 3;
+}
+
+.hero-main .subtext-wrap > div {
+	height: calc(100% - 32px);
+	margin: 16px;
+	background-color: white;
+	border-radius: 4px;
+	display: grid;
+	align-items: center;
+	justify-content: center;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.hero-main .t-wrap {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 16px;
+}
+
+.hero-main .t-wrap > div {
+	height: 104px;
+	background-color: white;
+	border-radius: 4px;
+	font-size: 64px;
+	font-weight: bold;
+	width: fit-content;
+	padding: 0 24px;
+	display: grid;
+	align-items: center;
+}
+
+.hero-main .t-wrap > div:nth-child(2) {
+	align-self: center;
+}
+
+.hero-main .t-wrap > div:nth-child(3) {
+	align-self: flex-end;
+}
+
+@media (max-width: 900px) {
+	.hero-main .t-wrap {
+		display: none;
+	}
+	.hero-main .h-content {
+		grid-template-rows: auto 136px;
+		grid-template-columns: 392px;
+		width: 392px;
+	}
+	.hero-main .subtext-wrap > div {
+		padding: 0 16px;
+	}
+}
+
 main {
 	display: flex;
 	flex-direction: column;
@@ -227,6 +310,10 @@ main {
 main > .content {
 	width: 80%;
 	max-width: 640px;
+}
+
+main.home > .content {
+	max-width: 800px;
 }
 
 main > .content > hr {
@@ -246,7 +333,7 @@ main > .content > hr {
 	text-align: center;
 }
 
-p, li {
+p, li, ul {
 	font-size: 16px;
 	line-height: 1.5;
 	margin: 0;
@@ -254,7 +341,7 @@ p, li {
 }
 
 li {
-	margin-bottom: 16px;
+	margin: 8px 0;
 }
 
 h2 {
@@ -275,11 +362,13 @@ main a {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	margin: 32px 0;
 }
 
 .graphic p {
 	margin: 16px;
 	font-style: italic;
+	text-align: center;
 }
 
 .image-contain {
@@ -404,4 +493,32 @@ main a {
 	font-size: 16px;
 	font-weight: 500;
 	margin: 0 16px;
+}
+
+.spacer {
+	height: 48px;
+}
+
+.col-list {
+	columns: 1; /* default for small screens */
+	column-gap: 1.5rem;
+	padding-left: 1rem;
+	margin: 1rem 0;
+}
+
+@media (min-width: 600px) {
+	.col-list {
+		columns: 2;
+	}
+}
+
+@media (min-width: 900px) {
+	.col-list {
+		columns: 3;
+	}
+}
+
+.col-list li {
+	break-inside: avoid; /* prevent list items from breaking across columns */
+	padding: 0.25rem 0;
 }

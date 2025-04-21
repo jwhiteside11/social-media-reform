@@ -2,8 +2,8 @@ runtime: python39  # Specifies the Python runtime version
 
 handlers:
 - url: /
-  static_files: www/socialmedia.html
-  upload: www/socialmedia.html
+  static_files: www/index.html
+  upload: www/index.html
   secure: always
 
 - url: /addictive-algorithms

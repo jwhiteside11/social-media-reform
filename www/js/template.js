@@ -2,8 +2,9 @@
 function scalePage() {
   const body = document.querySelector('body');
   const maxWidth = 1400;
-  const minWidth = 380;
+  const minWidth = 480;
   let scale = 1;
+  console.log(window.innerWidth);
   if (window.innerWidth < minWidth) {
     scale = window.innerWidth / minWidth;
   } else if (window.innerWidth > maxWidth) {
