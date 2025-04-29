@@ -371,6 +371,11 @@ main a {
 	text-align: center;
 }
 
+.graphic.lg .image-contain {
+	max-width: 640px;
+	height: 300px;
+}
+
 .image-contain {
 	background-color: var(--med-gray-blue);
 	width: 100%;
@@ -383,6 +388,15 @@ main a {
 @media (max-width: 500px) {
 	.image-contain {
 		height: 204px;
+	}
+	.graphic.lg .image-contain {
+		height: 164px;
+	}
+}
+
+@media (max-width: 800px) {
+	.graphic.lg .image-contain {
+		height: 196px;
 	}
 }
 
@@ -521,4 +535,29 @@ main a {
 .col-list li {
 	break-inside: avoid; /* prevent list items from breaking across columns */
 	padding: 0.25rem 0;
+}
+
+li p {
+	margin: 0;
+}
+
+.row-resource-contain {
+	display: grid;
+	grid-auto-rows: auto;
+	margin-top: 48px;
+}
+
+.row-resource-contain > div {
+	display: grid;
+	grid-template-columns: 25% 50% 25%;
+}
+
+.row-resource-contain h4 {
+	margin: 0 8px 0 0;
+	line-height: 1.5;
+}
+
+.row-resource-contain a {
+	margin: 0 0 0 8px;
+	line-height: 1.5;
 }
